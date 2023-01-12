@@ -12,30 +12,24 @@ public class Building : MonoBehaviour
     [SerializeField]
     private Vector3 triangleSize = Vector3.one;
 
-    [SerializeField]
     private int submeshCount = 6;
 
-    [SerializeField]
     private int submeshTopIndex = 0;
 
-    [SerializeField]
     private int submeshBottomIndex = 1;
 
-    [SerializeField]
     private int submeshFrontIndex = 2;
 
-    [SerializeField]
     private int submeshBackIndex = 3;
 
-    [SerializeField]
     private int submeshLeftIndex = 4;
 
-    [SerializeField]
     private int submeshRightIndex = 5;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.transform.Translate(Vector3.up * triangleSize.y);
         CreateBuilding();
     }
 
