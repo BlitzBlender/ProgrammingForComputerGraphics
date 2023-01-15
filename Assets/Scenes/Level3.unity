@@ -131,11 +131,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+  - component: {fileID: 391961955}
   - component: {fileID: 391961954}
   - component: {fileID: 391961953}
-  - component: {fileID: 391961956}
   - component: {fileID: 391961957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,22 +202,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &391961956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391961952}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ae1d15569c23e48b9a65106120e513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeightMapImage: {fileID: 2800000, guid: 81bffa6c83159e540b07de85acd6bc2c, type: 3}
-  HeightMapScale: {x: 1, y: 1, z: 1}
-  loadHeightMap: 0
-  TerrainFlattenOnExit: 0
 --- !u!114 &391961957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +215,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimumRandomHeight: 0
-  MaximumRandomHeight: 0.1
+  MaximumRandomHeight: 0.01
+  flattenTerrain: 1
+  PerlinNoise: 1
+  PerlinNoiseWidthScale: 0.01
+  PerlinNoiseHeightScale: 0.02
+  terrainTextureData:
+  - terrainTexture: {fileID: 2800000, guid: 8a0746f48686e464f962622335053972, type: 3}
+    TileSize: {x: 20, y: 20}
+  addTerrainTexture: 1
+  treeData:
+  - TreeMesh: {fileID: 1250690161900600, guid: e6f343cc46467004f811ce2ba3a3841b, type: 3}
+    MinHeight: 0
+    MaxHeight: 0.5
+  MaxTrees: 90000
+  TreeSpacing: 10
+  addTrees: 1
+  TerrainLayerIndex: 8
 --- !u!1 &1352158535
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,8 +281,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 9.65
-  far clip plane: 1882.46
+  near clip plane: 0.01
+  far clip plane: 8858.71
   field of view: 44
   orthographic: 0
   orthographic size: 5
@@ -308,8 +308,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352158535}
-  m_LocalRotation: {x: -0.0016187868, y: 0.9331075, z: -0.35956952, w: -0.0042116963}
-  m_LocalPosition: {x: 524.02924, y: 762.1839, z: 1500.7476}
+  m_LocalRotation: {x: 0.29355, y: 0.63597614, z: -0.28538814, w: 0.6541531}
+  m_LocalPosition: {x: -1865.7454, y: 3187.6506, z: 1321.8684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
